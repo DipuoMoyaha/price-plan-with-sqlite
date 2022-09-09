@@ -1,0 +1,33 @@
+
+ 
+GET http://localhost:6009/api/price_plans/ 
+content-type: application/json
+
+
+###
+
+POST http://localhost:6009/api/price_plan/update/
+content-type: application/json
+
+{
+    "name": "sms_kick_101",
+    "call_cost" : 200,
+    "sms_cost": 100
+}
+
+###
+POST http://localhost:6009/api/phonebill/ 
+content-type: application/json
+
+{
+   "price_plan": "sms 101",
+   "actions" : "call,sms,call"
+}
+
+###
+POST http://localhost:6009/api/price_plan/delete/
+content-type: application/json
+
+{
+   "id":"2"
+}
